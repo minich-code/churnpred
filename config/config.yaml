@@ -1,0 +1,7 @@
+artifacts_root: artifacts
+
+data_ingestion: 
+  root_dir: artifacts/data_ingestion
+  mongo_uri: mongodb+srv://Minich:Mydatabase.456@minich-data-repository.gzlkk1s.mongodb.net/
+  database_name: churn
+  collection_name: transformed_web_churn
