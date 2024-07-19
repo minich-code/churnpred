@@ -5,3 +5,33 @@ data_ingestion:
   mongo_uri: mongodb+srv://Minich:Mydatabase.456@minich-data-repository.gzlkk1s.mongodb.net/
   database_name: churn
   collection_name: transformed_web_churn
+
+
+data_validation:
+  root_dir: artifacts/data_validation
+  data_source: artifacts/data_ingestion/web_churn.csv
+  status_file: artifacts/data_validation/status.json
+  critical_columns: 
+    - 'age'
+    - 'gender'
+    - 'region_category'
+    - 'membership_category'
+    - 'joined_through_referral'
+    - 'preferred_offer_types'
+    - 'internet_option'
+    - 'recency'
+    - 'avg_time_spent'
+    - 'monetary'
+    - 'frequency'
+    - 'points_in_wallet' 
+    - 'used_special_discount'
+    - 'offer_application_preference'
+    - 'past_complaint'
+    - 'complaint_status'
+    - 'feedback'
+    - 'churn_risk_score'
+    - 'medium_of_operation'
+    - 'tenure_months'
+    - 'visit_hour' 
+    - 'login_spend_ratio'
+    - 'login_transaction_ratio'

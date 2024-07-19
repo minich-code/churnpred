@@ -1,1 +1,27 @@
-key: val
+COLUMNS:
+  age: float64  
+  gender: object 
+  region_category: object
+  membership_category: object
+  joined_through_referral: object
+  preferred_offer_types: object
+  medium_of_operation: object
+  internet_option: object
+  recency: float64  
+  avg_time_spent: float64  
+  monetary: float64  
+  frequency: float64  
+  points_in_wallet: float64  
+  used_special_discount: object
+  offer_application_preference: object
+  past_complaint: object
+  complaint_status: object
+  feedback: object
+  churn_risk_score: int64
+  tenure_months: int64  
+  visit_hour: int64  
+  login_spend_ratio: float64  
+  login_transaction_ratio: float64  
+
+TARGET_COLUMN:
+  name: churn_risk_score

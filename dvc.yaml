@@ -8,3 +8,12 @@ stages:
     outs:
       - artifacts/data_ingestion/web_churn.csv
       - artifacts/data_ingestion/metadata.json
+
+  data_validation:
+    cmd: python src/churn/pipelines/pip_02_data_validation.py
+    deps:
+      - src/churn/pipelines/pip_02_data_validation.py
+      - config/config.yaml
+      - artifacts/data_ingestion/web_churn.csv
+    outs:
+      - artifacts/data_validation/status.json
