@@ -55,4 +55,21 @@ class ConfigurationManager:
             critical_columns=config.critical_columns
         )
         return data_validation_config
+    
+# Data transformation config manager
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=Path(config.root_dir),
+            data_path=Path(config.data_path),
+            numerical_cols=list(config.numerical_cols),
+            categorical_cols=list(config.categorical_cols)
+        )
+        return data_transformation_config
+
+
 

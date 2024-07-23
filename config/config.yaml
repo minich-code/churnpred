@@ -35,3 +35,33 @@ data_validation:
     - 'visit_hour' 
     - 'login_spend_ratio'
     - 'login_transaction_ratio'
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/web_churn.csv
+  numerical_cols:
+    - 'age'
+    - 'recency'
+    - 'avg_time_spent'
+    - 'monetary'
+    - 'frequency'
+    - 'points_in_wallet' 
+    - 'tenure_months'
+    - 'visit_hour' 
+    - 'login_spend_ratio'
+    - 'login_transaction_ratio'
+                  
+  categorical_cols:
+    - 'gender'
+    - 'region_category'
+    - 'membership_category'
+    - 'joined_through_referral'
+    - 'preferred_offer_types'
+    - 'internet_option'
+    - 'used_special_discount'
+    - 'offer_application_preference'
+    - 'past_complaint'
+    - 'complaint_status'
+    - 'feedback'
+    - 'medium_of_operation'
+

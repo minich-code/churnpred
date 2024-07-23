@@ -18,3 +18,12 @@ class DataValidationConfig:
     status_file: Path
     all_schema: dict
     critical_columns: list
+
+
+# Data Transformation entity
+@dataclass
+class DataTransformationConfig:
+    root_dir: Path
+    data_path: Path
+    numerical_cols: list
+    categorical_cols: list

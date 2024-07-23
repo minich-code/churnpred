@@ -1,6 +1,7 @@
 from src.churn import logging
 from src.churn.pipelines.pip_01_data_ingestion import DataIngestionPipeline
 from src.churn.pipelines.pip_02_data_validation import DataValidationPipeline
+from src.churn.pipelines.pip_03_data_transformation import DataTransformationPipeline
 
 COMPONENT_01_NAME = "DATA INGESTION COMPONENT"
 try: 
@@ -18,6 +19,17 @@ try:
     data_validation_pipeline = DataValidationPipeline()
     data_validation_pipeline.run()
     logging.info(f"## ======================== {COMPONENT_02_NAME} Terminated Successfully!=============== ##\n\nx************************x")
+
+except Exception as e:
+    logging.exception(e)
+    raise e
+
+COMPONENT_03_NAME = "DATA TRANSFORMATION COMPONENT"
+try:
+    logging.info(f"# ====================== {COMPONENT_03_NAME} Started! ================================= #")
+    data_transformation_pipeline = DataTransformationPipeline()
+    data_transformation_pipeline.run()
+    logging.info(f"## ======================== {COMPONENT_03_NAME} Terminated Successfully!=================== ##\n\nx*********************x")
 
 except Exception as e:
     logging.exception(e)
