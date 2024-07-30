@@ -5,8 +5,8 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: bcb7d7dbafc4c1aeaffa18d769db63bc
-      size: 1010
+      md5: b6a4ea37c8eef6ad4b25f88481beb7a8
+      size: 1739
     - path: src/churn/pipelines/pip_01_data_ingestion.py
       hash: md5
       md5: 86f224219c686a005f2e181faab9bf85
@@ -14,7 +14,7 @@ stages:
     outs:
     - path: artifacts/data_ingestion/metadata.json
       hash: md5
-      md5: 79ca9638697628bed7bf4c5e79adf349
+      md5: 92d49654cfe8ee273bf1e4c15a8848d8
       size: 211
     - path: artifacts/data_ingestion/web_churn.csv
       hash: md5
@@ -29,8 +29,8 @@ stages:
       size: 7689980
     - path: config/config.yaml
       hash: md5
-      md5: bcb7d7dbafc4c1aeaffa18d769db63bc
-      size: 1010
+      md5: b6a4ea37c8eef6ad4b25f88481beb7a8
+      size: 1739
     - path: src/churn/pipelines/pip_02_data_validation.py
       hash: md5
       md5: 29056a1883b5e17a8622cd01f88aa24e
