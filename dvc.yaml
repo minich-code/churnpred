@@ -18,6 +18,21 @@ stages:
     outs:
       - artifacts/data_validation/status.json
 
+
+  data_transformation:
+    cmd: python src/churn/pipelines/pip_03_data_transformation.py
+    deps: 
+      - src/churn/pipelines/pip_03_data_transformation.py
+      - config/config.yaml
+
+    outs:
+      - artifacts/data_transformation/X_test_transformed.joblib
+      - artifacts/data_transformation/y_test.csv
+      - artifacts/data_transformation/X_train_transformed.joblib
+      - artifacts/data_transformation/y_train.csv
+      - artifacts/data_transformation/X_val_transformed.joblib
+      - artifacts/data_transformation/y_val.csv
+
   model_training:
     cmd: python src/churn/pipelines/pip_04_model_trainer.py
     deps:
