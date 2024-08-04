@@ -72,10 +72,10 @@ model_trainer:
   model_name: model.joblib
   mlflow_uri: https://dagshub.com/minich-code/churnpred.mlflow
 
-# model_evaluation:
-#   root_dir: artifacts/model_evaluation
-#   test_data_path: artifacts/data_transformation/X_val_transformed.joblib
-#   test_target_variable: artifacts/data_transformation/y_val.csv
-#   model_path: artifacts/model_trainer/model.joblib
-#   metric_file_name: artifacts/model_evaluation/metrics.json
-#   mlflow_uri: https://dagshub.com/minich-code/churn.mlflow
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  test_data_path: artifacts/data_transformation/X_val_transformed.joblib
+  test_target_variable: artifacts/data_transformation/y_val.csv
+  model_path: artifacts/model_trainer/model.joblib
+  metric_file_name: artifacts/model_evaluation/evaluation_metrics.json
+  mlflow_uri: https://dagshub.com/minich-code/churn.mlflow

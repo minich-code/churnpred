@@ -41,3 +41,14 @@ stages:
 
     outs:
       - artifacts/model_trainer/model.joblib
+
+  model_evaluation:
+    cmd: python src/churn/pipelines/pip_05_model_evaluation.py
+    deps:
+      - src/churn/pipelines/pip_05_model_evaluation.py
+      - config/config.yaml
+
+    outs:
+      - artifacts/model_evaluation/pr_curve.png
+      - artifacts/model_evaluation/roc_curve.png
+      - artifacts/model_evaluation/evaluation_metrics.json

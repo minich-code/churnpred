@@ -46,3 +46,15 @@ try:
 except Exception as e:
     logging.exception(e)
     raise e
+
+
+COMPONENT_05_NAME = "MODEL EVALUATION COMPONENT"
+try:
+    logging.info(f"# ====================== {COMPONENT_05_NAME} Started! ================================= #")
+    model_evaluation_pipeline = ModelEvaluationPipeline()
+    model_evaluation_pipeline.run()
+    logging.info(f"## ======================== {COMPONENT_05_NAME} Terminated Successfully!======================= ##\n\nx******************x")
+except Exception as e:
+    logging.exception(e)
+    raise e
+

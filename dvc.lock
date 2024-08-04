@@ -5,8 +5,8 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: 3de6edc77505ff9dadbfa7f0fdcc0df1
-      size: 2421
+      md5: e32143acdfd7b8d56c0db99a11b67c09
+      size: 2418
     - path: src/churn/pipelines/pip_01_data_ingestion.py
       hash: md5
       md5: 86f224219c686a005f2e181faab9bf85
@@ -14,7 +14,7 @@ stages:
     outs:
     - path: artifacts/data_ingestion/metadata.json
       hash: md5
-      md5: 41c3acf9fdfc89ddf3a4efbca969cc7c
+      md5: a3fcc11eb06738b861bc98f0e1783183
       size: 211
     - path: artifacts/data_ingestion/web_churn.csv
       hash: md5
@@ -29,8 +29,8 @@ stages:
       size: 7689980
     - path: config/config.yaml
       hash: md5
-      md5: 3de6edc77505ff9dadbfa7f0fdcc0df1
-      size: 2421
+      md5: e32143acdfd7b8d56c0db99a11b67c09
+      size: 2418
     - path: src/churn/pipelines/pip_02_data_validation.py
       hash: md5
       md5: 29056a1883b5e17a8622cd01f88aa24e
@@ -45,8 +45,8 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: 3de6edc77505ff9dadbfa7f0fdcc0df1
-      size: 2421
+      md5: e32143acdfd7b8d56c0db99a11b67c09
+      size: 2418
     - path: src/churn/pipelines/pip_03_data_transformation.py
       hash: md5
       md5: d69312fb5c0b10133023bcb06b52dd4d
@@ -81,8 +81,8 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: 3de6edc77505ff9dadbfa7f0fdcc0df1
-      size: 2421
+      md5: e32143acdfd7b8d56c0db99a11b67c09
+      size: 2418
     - path: src/churn/pipelines/pip_04_model_trainer.py
       hash: md5
       md5: 3233e21614a3942c5c4b404eb09bf5cb
@@ -92,3 +92,27 @@ stages:
       hash: md5
       md5: 9650349764d4da951dc34ceac5db256a
       size: 1045180
+  model_evaluation:
+    cmd: python src/churn/pipelines/pip_05_model_evaluation.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: e32143acdfd7b8d56c0db99a11b67c09
+      size: 2418
+    - path: src/churn/pipelines/pip_05_model_evaluation.py
+      hash: md5
+      md5: 2cc80ff688bbceeb140870083c52ff0c
+      size: 1617
+    outs:
+    - path: artifacts/model_evaluation/evaluation_metrics.json
+      hash: md5
+      md5: 21d0fbbc2fa52cb69bcc46439db6ff17
+      size: 221
+    - path: artifacts/model_evaluation/pr_curve.png
+      hash: md5
+      md5: c826df76f6ecc93ebb23cfe381eaf355
+      size: 32578
+    - path: artifacts/model_evaluation/roc_curve.png
+      hash: md5
+      md5: 0e91f744c64186e96a53c87914d95206
+      size: 44264

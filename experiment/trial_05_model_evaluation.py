@@ -3,12 +3,26 @@ from dataclasses import dataclass
 from src.churn.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
 from src.churn.utils.commons import read_yaml, create_directories, save_json
 
-# mlflow
-import dagshub
-import mlflow 
 
+import os
+import pandas as pd
+import numpy as np
+import joblib
+import matplotlib.pyplot as plt
+from sklearn.metrics import (accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, average_precision_score,
+                              classification_report, confusion_matrix, roc_curve, auc, precision_recall_curve)
+from sklearn.preprocessing import label_binarize
+from sklearn.multiclass import OneVsRestClassifier
+from lightgbm import LGBMClassifier
+
+# mlflow 
+import dagshub
+import mlflow
+
+# UserWarning
 mlflow.set_tracking_uri('https://dagshub.com/minich-code/churnpred.mlflow')
 dagshub.init(repo_owner='minich-code', repo_name='churnpred', mlflow=True)
+
 
 
 @dataclass
@@ -51,15 +65,6 @@ class ConfigurationManager:
 
         return model_evaluation_config
 
-import os
-import pandas as pd
-import numpy as np
-import joblib
-import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, average_precision_score, classification_report, confusion_matrix, roc_curve, auc, precision_recall_curve
-from sklearn.preprocessing import label_binarize
-from sklearn.multiclass import OneVsRestClassifier
-from lightgbm import LGBMClassifier
 
 
 class ModelEvaluation:
@@ -80,6 +85,7 @@ class ModelEvaluation:
         f1 = f1_score(y_val, y_pred, average='weighted')
         roc_auc = roc_auc_score(y_val, y_pred_proba, multi_class='ovr', average='weighted')
         pr_auc = average_precision_score(y_val, y_pred_proba, average='weighted')
+
 
 
         # Print detailed classification report and confusion matrix

@@ -49,3 +49,16 @@ class ModelTrainerConfig:
     min_child_samples: int
     # mlflow
     mlflow_uri: str
+
+
+@dataclass
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    test_target_variable: Path
+    model_path: Path
+    all_params: dict
+    metric_file_name: Path
+    target_column: str
+    # mlflow
+    mlflow_uri: str
