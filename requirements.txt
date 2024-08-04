@@ -13,7 +13,8 @@ joblib
 seaborn
 pymongo
 streamlit
-pip-chill==1.0.1
+pip-chill==1.0.3
+
 LightGBM
 category_encoders
 requests

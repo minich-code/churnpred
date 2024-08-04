@@ -70,6 +70,40 @@ class ConfigurationManager:
             categorical_cols=list(config.categorical_cols)
         )
         return data_transformation_config
+    
+# Model trainer configuration 
+
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        # Get the model trainer configuration 
+        config = self.config.model_trainer
+        params = self.params.LGBMClassifier
+        create_directories([config.root_dir])
+        # Create and return the Model Trainer Config object
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            train_data_path=config.train_data_path,
+            val_data_path=config.val_data_path,
+            model_name=config.model_name,
+
+            # LGBMClassifier hyperparameters
+            boosting_type=params['boosting_type'],
+            max_depth=params['max_depth'],
+            learning_rate=params['learning_rate'],
+            n_estimators=params['n_estimators'],
+            objective=params['objective'],
+            min_split_gain=params['min_split_gain'],
+            min_child_weight=params['min_child_weight'],
+            reg_alpha=params['reg_alpha'],
+            reg_lambda=params['reg_lambda'],
+            random_state=params['random_state'],
+            min_child_samples=params['min_child_samples'],
+
+            # mlflow 
+            mlflow_uri= config.mlflow_uri,
+
+            
+        )
+        return model_trainer_config
 
 
 

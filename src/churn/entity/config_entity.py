@@ -27,3 +27,25 @@ class DataTransformationConfig:
     data_path: Path
     numerical_cols: list
     categorical_cols: list
+
+# Model trainer entity 
+@dataclass
+class ModelTrainerConfig:
+    root_dir: Path
+    train_data_path: Path
+    val_data_path: Path
+    model_name: str
+    # LGBMClassifier 
+    boosting_type: str
+    max_depth: int
+    learning_rate: float
+    n_estimators: int
+    objective: str
+    min_split_gain: float
+    min_child_weight: float
+    reg_alpha: float
+    reg_lambda: float
+    random_state: int
+    min_child_samples: int
+    # mlflow
+    mlflow_uri: str

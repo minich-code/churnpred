@@ -17,3 +17,12 @@ stages:
       - artifacts/data_ingestion/web_churn.csv
     outs:
       - artifacts/data_validation/status.json
+
+  model_training:
+    cmd: python src/churn/pipelines/pip_04_model_trainer.py
+    deps:
+      - src/churn/pipelines/pip_04_model_trainer.py
+      - config/config.yaml
+
+    outs:
+      - artifacts/model_trainer/model.joblib
