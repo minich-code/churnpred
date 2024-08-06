@@ -50,7 +50,7 @@ class ModelTrainerConfig:
     # mlflow
     mlflow_uri: str
 
-
+# Model Evaluation 
 @dataclass
 class ModelEvaluationConfig:
     root_dir: Path
@@ -60,5 +60,18 @@ class ModelEvaluationConfig:
     all_params: dict
     metric_file_name: Path
     target_column: str
+    # mlflow
+    mlflow_uri: str
+
+# Model Validation 
+@dataclass
+class ModelValidationConfig:
+    root_dir: Path
+    model_path: Path
+    test_data_path: Path
+    test_target_variable: Path
+    metric_file_name: Path
+    all_params: dict
+    target_column: str  # Add target_column attribute
     # mlflow
     mlflow_uri: str

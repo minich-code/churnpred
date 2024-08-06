@@ -78,4 +78,13 @@ model_evaluation:
   test_target_variable: artifacts/data_transformation/y_val.csv
   model_path: artifacts/model_trainer/model.joblib
   metric_file_name: artifacts/model_evaluation/evaluation_metrics.json
-  mlflow_uri: https://dagshub.com/minich-code/churn.mlflow
+  mlflow_uri: https://dagshub.com/minich-code/churnpred.mlflow
+
+model_validation:
+  root_dir: artifacts/model_validation
+  model_path: artifacts/model_trainer/model.joblib
+  test_data_path: artifacts/data_transformation/X_test_transformed.joblib
+  test_target_variable: artifacts/data_transformation/y_test.csv
+  metric_file_name: artifacts/model_validation/validation_metrics.json
+  mlflow_uri: https://dagshub.com/minich-code/churnpred.mlflow
+
