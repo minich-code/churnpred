@@ -1,21 +1,16 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Data</title>
+    <title>Prediction Results</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Upload Customer Data</h1>
-        <form method="POST" action="/predict" enctype="multipart/form-data"> 
-            <input type="file" name="csv_file" accept=".csv">
-            <button type="submit" class="button">Predict</button>
-        </form>
+        <h1>Prediction Complete</h1>
+        <p>The predictions have been made and emails have been sent to the clients.</p>
+        <a href="/" class="button">Back to Home</a>
     </div>
 </body>
 </html>
-
